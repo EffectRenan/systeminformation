@@ -103,6 +103,7 @@ si.cpu()
 
 (last 7 major and minor version releases)
 
+- Version 5.7.0: `diskLayout()` added S.M.A.R.T for Windows (if installed)
 - Version 5.6.0: `cpuTemperature()` added added socket and chipset temp (linux)
 - Version 5.5.0: `dockerVolumes()` added
 - Version 5.4.0: `dockerImages()` added
@@ -121,6 +122,7 @@ You can find all changes here: [detailed changelog][changelog-url]
 I was able to test it on several Debian, Raspbian, Ubuntu distributions as well as macOS (Mavericks, Yosemite, El Captain, Sierra, High Sierra, Mojave, Catalina, Big Sur) and some Windows 7, Windows 8, Windows 10, FreeBSD, OpenBSD, NetBSD and SunOS machines. Not all functions are supported on all operating systems. Have a look at the function reference in the docs to get further details.
 
 If you have comments, suggestions & reports, please feel free to contact me!
+
 
 I also created a nice little command line tool called [mmon][mmon-github-url] (micro-monitor) for Linux and macOS, also available via [github][mmon-github-url] and [npm][mmon-npm-url]
 
@@ -423,7 +425,7 @@ Full function reference with examples can be found at [https://systeminformation
 | | [0].interfaceType | X |  | | X |  | SATA, PCIe, ... |
 | | [0].smartStatus | X |  | X | X |  | S.M.A.R.T Status (see Known Issues) |
 | | [0].temperature | X |  | | |  | S.M.A.R.T temperature |
-| | [0].smartData | X |  |  |  |  | full S.M.A.R.T data from smartctl<br>requires at least smartmontools 7.0 |
+| | [0].smartData | X |  |  | X |  | full S.M.A.R.T data from smartctl<br>requires at least smartmontools 7.0 |
 | si.blockDevices(cb) | [{...}] | X |  | X | X |  | returns array of disks, partitions,<br>raids and roms |
 | | [0].name | X |  | X | X |  | name |
 | | [0].type | X |  | X | X |  | type |
@@ -938,7 +940,7 @@ Sebastian Hildebrandt, [+innovations](http://www.plus-innovations.com)
 
 Written by Sebastian Hildebrandt [sebhildebrandt](https://github.com/sebhildebrandt)
 
-#### Contributers
+#### Contributors
 
 - Guillaume Legrain [glegrain](https://github.com/glegrain)
 - Riccardo Novaglia [richy24](https://github.com/richy24)
@@ -958,6 +960,7 @@ Written by Sebastian Hildebrandt [sebhildebrandt](https://github.com/sebhildebra
 - Ricardo Polo [ricardopolo](https://github.com/ricardopolo)
 - Miłosz Dźwigała [mily20001](https://github.com/mily20001)
 - cconley717 [cconley717](https://github.com/cconley717)
+- Maria Camila Cubides [MariaCamilaCubides](https://github.com/MariaCamilaCubides)
 
 OSX Temperature: credits here are going to:
 

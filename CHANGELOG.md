@@ -53,8 +53,8 @@ We had to make **several interface changes** to keep systeminformation as consis
 - `getData()`: support for passing parameters and filters (see section General / getData)
 - `graphics()`: extended nvidia-smi parsing
 - `networkInterfaces()`: type detection improved (win - wireless)
-- `memoryLayout()`: extended manufacturer list (decoding)
-- `memoryLayout()`: added ECC flag
+- `memLayout()`: extended manufacturer list (decoding)
+- `memLayout()`: added ECC flag
 - `osInfo()`: better fqdn (win)
 - `osinfo()`: added hypervizor if hyper-v is enabled (win only)
 - `osInfo()`: added remoteSession (win only)
@@ -77,6 +77,26 @@ For major (breaking) changes - **version 4, 3 and 2** - see end of page.
 
 | Version        | Date           | Comment  |
 | -------------- | -------------- | -------- |
+| 5.7.7          | 2021-06-15     | `graphics()` improved detection screen resolution (macOS) |
+| 5.7.6          | 2021-06-09     | `battery()` improved detection (additional batteries windows) |
+| 5.7.5          | 2021-06-08     | `memLayout()` improved clock speed detection (windows) |
+| 5.7.4          | 2021-05-27     | `osInfo()`, `cpu()` improved hypervisor, virtualization detection (windows) |
+| 5.7.3          | 2021-05-26     | `osInfo()` improved UEFI detection (windows) |
+| 5.7.2          | 2021-05-24     | `system()` virtual detection improvement |
+| 5.7.1          | 2021-05-20     | `graphics()` Check for qwMemorySize on Windows |
+| 5.7.0          | 2021-05-20     | `diskLayout()` added smartdata for win (if istalled) |
+| 5.6.22         | 2021-05-18     | `diskLayout()` fixed to small buffer smartdata (linux) |
+| 5.6.21         | 2021-05-14     | `graphics()` fixed dual gpu issue (macOS) |
+| 5.6.20         | 2021-05-07     | `system()` fixed vm detection (linux) |
+| 5.6.19         | 2021-05-06     | `services()` modified service listing (linux) |
+| 5.6.18         | 2021-05-06     | `processes()` fixed Windows mem bug (naming conform to all platforms) |
+| 5.6.17         | 2021-05-05     | `networkInterfaces()` fixed Windows XP bug (WMIC NetEnabled) |
+| 5.6.16         | 2021-05-05     | `graphics()` fixed compare bug |
+| 5.6.15         | 2021-05-05     | restored Node 4.x compatibility |
+| 5.6.14         | 2021-05-04     | `networkGatewayDefault()` macOS improvement for active VPN |
+| 5.6.13         | 2021-05-04     | `dockerImagesInspect()`, `dockerContainerInspect()`, `dockerContainerProcesses()` security updates |
+| 5.6.12         | 2021-04-09     | `networkinterfaces()` windows detection fix |
+| 5.6.11         | 2021-04-08     | `versions()` parameter sanitation |
 | 5.6.10         | 2021-03-29     | `vboxInfo()` fixed windows bug |
 | 5.6.9          | 2021-03-28     | `graphics()` fixed nvidia-smi compare bug |
 | 5.6.8          | 2021-03-22     | typescript definitions fix `wifiInterfces()`, `wifiConnections()` |
@@ -395,7 +415,8 @@ For major (breaking) changes - **version 4, 3 and 2** - see end of page.
 | 3.37.2         | 2018-02-15     | fixed bug `battery().percent` for macOS |
 | 3.37.1         | 2018-02-13     | fixed bug `battery().ischarging` for macOS |
 | 3.37.0         | 2018-02-11     | extended FreeBSD support `networkStats()` |
-| 3.36.0         | 2018-02-11     | extended FreeBSD support `networkConnections()` |
+| 3.36.
+0         | 2018-02-11     | extended FreeBSD support `networkConnections()` |
 | 3.35.0         | 2018-02-11     | extended FreeBSD support `processLoad()` |
 | 3.34.1         | 2018-02-11     | updated docs |
 | 3.34.0         | 2018-02-10     | first partial FreeBSD support |
